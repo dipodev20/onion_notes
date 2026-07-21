@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Разрешаем нешифрованный (http, не https) трафик только на
+         локалхост — туда, где раздел "Мини-приложения" поднимает
+         локальный сервер для показа HTML пользователя внутри WebView.
+         На реальный интернет это не распространяется. -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">localhost</domain>
+    </domain-config>
+</network-security-config>
